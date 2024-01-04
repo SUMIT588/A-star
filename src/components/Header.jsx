@@ -18,7 +18,9 @@ const Header = ({ generatePossibleState, reset, showGenerateButton }) => {
   return (
     <div className="content">
       <div className="title-wrapper">
-        <h2 className="title">A-Star</h2>
+        <h2 className="title">Heuristic Approach</h2>
+        <h3>Using manhatton distance</h3>
+        <h4>Total misplaced tiles : 4</h4>
       </div>
       <div>
         {showGenerateButton && (
@@ -34,8 +36,6 @@ const Header = ({ generatePossibleState, reset, showGenerateButton }) => {
           Reset
         </button>
       </div>
-
-      
     </div>
   );
 };

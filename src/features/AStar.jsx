@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { ArcherContainer, ArcherElement } from "react-archer";
+
 import Board from "../components/Board";
 import Header from "../components/Header";
-import checkArrayEqual from "../utils/checkArrayEqual";
-import { initialState } from "../data/data";
-import { ArcherContainer, ArcherElement } from "react-archer";
-import checkValidMove from "../utils/checkVaildMove";
 import calculateHeursitics from "../utils/calculateHeuristics";
+import checkArrayEqual from "../utils/checkArrayEqual";
+import checkValidMove from "../utils/checkVaildMove";
 import { finalNumbers } from "../data/data";
+import { initialState } from "../data/data";
+import { useState } from "react";
 
 const AStar = () => {
   const [stateArray, setStateArray] = useState([[initialState]]);
@@ -234,7 +235,7 @@ const AStar = () => {
                         sourceAnchor: "left",
                         targetAnchor: "right",
                         label: item.transition,
-                        style: { strokeWidth: 2 },
+                        style: { strokeWidth: 1 },
                         startMarker: true,
                       },
                     ]}
@@ -254,12 +255,6 @@ const AStar = () => {
       <div className="finalState">
         <p className="aStarP">Final State</p>
         <Board state={{ numbers: finalNumbers }} />
-      </div>
-
-      <div className="aStarDefinition">
-        <p className="aStarP">{`f(N) = g(N) + h(N), where`}</p>
-        <p className="aStarP">{`g(N) = Actual Cost from Start Node to n`}</p>
-        <p className="aStarP">{`h(N) = Estimation Cost from n to Goal Node`}</p>
       </div>
     </div>
   );
